@@ -6,6 +6,7 @@ namespace inlamningsuppg2
 {
     class GroupMember
     {
+        //Klassmedlemmar/Fält
         private string name;
         private int age;
         private string city;
@@ -17,8 +18,6 @@ namespace inlamningsuppg2
         private string favoriteFood;
         private string favoriteMusic;
         private string comment;
-
-        static int membersCount;
 
         public GroupMember()
         { 
@@ -37,7 +36,6 @@ namespace inlamningsuppg2
             this.FavoriteMusic = favoriteMusic;
             this.Comment = comment;
 
-            membersCount++;
         }
         public string Name
         {
@@ -99,9 +97,7 @@ namespace inlamningsuppg2
             Console.Write(name + ", ");
         }
         public void Description()
-        {
-           
-
+        {         
             Console.WriteLine("Namn: {0}", Name);
             Console.WriteLine("Ålder: {0}", Age);
             Console.WriteLine("Stad: {0}", City);
@@ -112,8 +108,11 @@ namespace inlamningsuppg2
             Console.WriteLine("Favorit mat: {0}", FavoriteFood);
             Console.WriteLine("Favorit musik: {0}", FavoriteMusic);
             Console.WriteLine("Vad som driver till programmering: {0}", Comment);
-            Console.WriteLine();           
+            Console.Write("\n");
         }
-     
+        static void Hello()
+        {
+            Console.WriteLine("Hello");
+        }
     }
 }
