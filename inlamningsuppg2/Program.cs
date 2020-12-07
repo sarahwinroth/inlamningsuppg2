@@ -72,7 +72,7 @@ namespace inlamningsuppg2
                     ShowMembers();
                     break;
                 case 3:
-                    editMembers();
+                    EditMembers();
                     break;
             }
         }     
@@ -142,7 +142,7 @@ namespace inlamningsuppg2
             }
             Menu();
         }
-        static void editMembers()
+        static void EditMembers()
         {          
             bool keepGoing = true;
 
@@ -152,7 +152,7 @@ namespace inlamningsuppg2
             Console.WriteLine("Välj vad du vill göra");
             Console.WriteLine("1. Lägg till gruppmedlem.");
             Console.WriteLine("2. Ta bort gruppmedlem.");
-            Console.WriteLine("2. Redigera gruppmedlem.");
+            Console.WriteLine("3. Redigera gruppmedlem.");
             int input = Convert.ToInt32(Console.ReadLine());
             Console.Write("\n");
 
@@ -227,7 +227,90 @@ namespace inlamningsuppg2
         static void ChangeMember()
         {
             Console.Clear();
+            Console.WriteLine("Skriv namnet på den gruppmedlem du vill ändra uppgifter på:");
+            Console.WriteLine("(Ex. Svante Joelsson)");
+            string input = Console.ReadLine();
+            Console.Write("\n");
 
+            foreach (var member in listOfMembers)
+            {
+                while (input == member.Name)
+                {
+                    member.Description();
+                    Console.WriteLine("Vad är det du vill ändra på?");
+                    Console.WriteLine("1. Namn");
+                    Console.WriteLine("2. Ålder");
+                    Console.WriteLine("3. Stad");
+                    Console.WriteLine("4. Bostad");
+                    Console.WriteLine("5. Familj");
+                    Console.WriteLine("6. Antalet husdjur");
+                    Console.WriteLine("7. Tidigare yrke");
+                    Console.WriteLine("8. Hobby");
+                    Console.WriteLine("9. Favorit mat");
+                    Console.WriteLine("10. favorit musik");
+                    Console.WriteLine("11. Vad som driver till programmering");
+                    int choice = Convert.ToInt32(Console.ReadLine());
+                    switch (choice)
+                    {
+                        case 1:
+                            Console.Write("Ange nytt namn: ");
+                            string name = Console.ReadLine();
+                            member.Name = name;
+                            break;
+                        case 2:
+                            Console.Write("Ange ny ålder: ");
+                            int age = Convert.ToInt32(Console.ReadLine());
+                            member.Age = age;
+                            break;
+                        case 3:
+                            Console.Write("Ange ny stad: ");
+                            string city = Console.ReadLine();
+                            member.City = city;
+                            break;
+                        case 4:
+                            Console.Write("Ange nytt boende: ");
+                            string accomondation = Console.ReadLine();
+                            member.Accomondation = accomondation;
+                            break;
+                        case 5:
+                            Console.Write("Ange nytt boende: ");
+                            string family = Console.ReadLine();
+                            member.Family = family;
+                            break;
+                        case 6:
+                            Console.Write("Ange nytt antal husdjur: ");
+                            int numberOfPets = Convert.ToInt32(Console.ReadLine());
+                            member.NumOfPets = numberOfPets;
+                            break;
+                        case 7:
+                            Console.Write("Ange annat tidigare yrke: ");
+                            string profession = Console.ReadLine();
+                            member.Profession = profession;
+                            break;
+                        case 8:
+                            Console.Write("Ange ny hobby: ");
+                            string hobby = Console.ReadLine();
+                            member.Hobbies = hobby;
+                            break;
+                        case 9:
+                            Console.Write("Ange ny favorit mat: ");
+                            string favoriteFood = Console.ReadLine();
+                            member.FavoriteFood = favoriteFood;
+                            break;
+                        case 10:
+                            Console.Write("Ange ny favorit musik: ");
+                            string favoriteMusic = Console.ReadLine();
+                            member.FavoriteMusic = favoriteMusic;
+                            break;
+                        case 11:
+                            Console.Write("Ange ny favorit mat: ");
+                            string comment = Console.ReadLine();
+                            member.Comment = comment;
+                            break;
+                    }
+                    break;
+                }
+            }
         }
     }
 }
