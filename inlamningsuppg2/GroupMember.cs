@@ -18,7 +18,7 @@ namespace inlamningsuppg2
         private string favoriteFood;
         private string favoriteMusic;
         private string comment;
-
+        static int count;
         public GroupMember()
         { 
         }
@@ -92,9 +92,9 @@ namespace inlamningsuppg2
             get { return comment; }
             set { comment = value; }
         }
-        public void MemberName()
+        public string MemberName()
         {
-            Console.Write(name + ", ");
+            return name;
         }
         public void Description()
         {         
@@ -109,10 +109,6 @@ namespace inlamningsuppg2
             Console.WriteLine("Favorit musik: {0}", FavoriteMusic);
             Console.WriteLine("Vad som driver till programmering: {0}", Comment);
             Console.Write("\n");
-        }
-        static void Hello()
-        {
-            Console.WriteLine("Hello");
         }
     }
 }
